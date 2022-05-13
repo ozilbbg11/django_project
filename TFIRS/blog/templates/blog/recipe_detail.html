@@ -1,0 +1,25 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<script type="text/javascript">
+    str = {{ recipe.ingredient }};
+    a_str = str.replace("[']", "");
+    b_str = a_str.split(",").join("\n");
+    document.write('.ingredient').textContent = "hi";
+</script>
+
+<article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+            <h1>{{ recipe.name }}</h1>
+            <small class="text-muted">Cuisines: {{ recipe.cuisines }}</small>
+        </div>
+        <p class="article-content">
+            {{ ingredient }}
+            <script type="text/javascript">
+                str = {{ ingredient }};
+                document.write(str);
+            </script>
+        </p>
+    </div>
+</article>
+{% endblock content %}

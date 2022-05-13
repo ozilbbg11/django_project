@@ -1,0 +1,322 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<h1>Trend of the food features</h1>
+    <br>
+    <br>
+
+    <ul class="nav nav-tabs" style="border-bottom-color: transparent;">
+      <li class="active"><a data-toggle="tab" href="#home" ><b>Upcoming week</b></a></li>
+      <li><a data-toggle="tab" href="#menu1" ><b>Upcoming Month</b></a></li>
+      <li><a data-toggle="tab" href="#menu2" ><b>Hidden Gem</b></a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div id="home" class="tab-pane fade in active">
+            <br>
+              <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+              <div id="Weekly"></div>
+      </div>
+      <div id="menu1" class="tab-pane fade">
+          <br>
+        <div id="Monthly"></div>
+      </div>
+      <div id="menu2" class="tab-pane fade">
+          <br>
+        <div id="Hidden"></div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+<script type="text/javascript">
+      google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Week');
+      data.addColumn('number', '{{weekTrend.0.id}}');
+      data.addColumn('number', '{{weekTrend.1.id}}');
+      data.addColumn('number', '{{weekTrend.2.id}}');
+      data.addColumn('number', '{{weekTrend.3.id}}');
+      data.addColumn('number', '{{weekTrend.4.id}}');
+
+      data.addRows([
+        [1,  {{weekTrend.0.heat.0.value}}, {{weekTrend.1.heat.0.value}}, {{weekTrend.2.heat.0.value}}, {{weekTrend.3.heat.0.value}}, {{weekTrend.4.heat.0.value}}],
+        [2,  {{weekTrend.0.heat.1.value}}, {{weekTrend.1.heat.1.value}}, {{weekTrend.2.heat.1.value}}, {{weekTrend.3.heat.1.value}}, {{weekTrend.4.heat.1.value}}],
+        [3,  {{weekTrend.0.heat.2.value}}, {{weekTrend.1.heat.2.value}}, {{weekTrend.2.heat.2.value}}, {{weekTrend.3.heat.2.value}}, {{weekTrend.4.heat.2.value}}],
+        [4,  {{weekTrend.0.heat.3.value}}, {{weekTrend.1.heat.3.value}}, {{weekTrend.2.heat.3.value}}, {{weekTrend.3.heat.3.value}}, {{weekTrend.4.heat.3.value}}],
+        [5,  {{weekTrend.0.heat.4.value}}, {{weekTrend.1.heat.4.value}}, {{weekTrend.2.heat.4.value}}, {{weekTrend.3.heat.4.value}}, {{weekTrend.4.heat.4.value}}],
+        [6,  {{weekTrend.0.heat.5.value}}, {{weekTrend.1.heat.5.value}}, {{weekTrend.2.heat.5.value}}, {{weekTrend.3.heat.5.value}}, {{weekTrend.4.heat.5.value}}],
+        [7,  {{weekTrend.0.heat.6.value}}, {{weekTrend.1.heat.6.value}}, {{weekTrend.2.heat.6.value}}, {{weekTrend.3.heat.6.value}}, {{weekTrend.4.heat.6.value}}],
+        [8,  {{weekTrend.0.heat.7.value}}, {{weekTrend.1.heat.7.value}}, {{weekTrend.2.heat.7.value}}, {{weekTrend.3.heat.7.value}}, {{weekTrend.4.heat.7.value}}],
+        [9,  {{weekTrend.0.heat.8.value}}, {{weekTrend.1.heat.8.value}}, {{weekTrend.2.heat.8.value}}, {{weekTrend.3.heat.8.value}}, {{weekTrend.4.heat.8.value}}],
+        [10, {{weekTrend.0.heat.9.value}}, {{weekTrend.1.heat.9.value}}, {{weekTrend.2.heat.9.value}}, {{weekTrend.3.heat.9.value}}, {{weekTrend.4.heat.9.value}}],
+        [11,  {{weekTrend.0.heat.10.value}}, {{weekTrend.1.heat.10.value}}, {{weekTrend.2.heat.10.value}}, {{weekTrend.3.heat.10.value}}, {{weekTrend.4.heat.10.value}}],
+        [12,  {{weekTrend.0.heat.11.value}}, {{weekTrend.1.heat.11.value}}, {{weekTrend.2.heat.11.value}}, {{weekTrend.3.heat.11.value}}, {{weekTrend.4.heat.11.value}}],
+        [13,  {{weekTrend.0.heat.12.value}}, {{weekTrend.1.heat.12.value}}, {{weekTrend.2.heat.12.value}}, {{weekTrend.3.heat.12.value}}, {{weekTrend.4.heat.12.value}}],
+        [14,  {{weekTrend.0.heat.13.value}}, {{weekTrend.1.heat.13.value}}, {{weekTrend.2.heat.13.value}}, {{weekTrend.3.heat.13.value}}, {{weekTrend.4.heat.13.value}}],
+        [15,  {{weekTrend.0.heat.14.value}}, {{weekTrend.1.heat.14.value}}, {{weekTrend.2.heat.14.value}}, {{weekTrend.3.heat.14.value}}, {{weekTrend.4.heat.14.value}}],
+        [16,  {{weekTrend.0.heat.15.value}}, {{weekTrend.1.heat.15.value}}, {{weekTrend.2.heat.15.value}}, {{weekTrend.3.heat.15.value}}, {{weekTrend.4.heat.15.value}}],
+        [17,  {{weekTrend.0.heat.16.value}}, {{weekTrend.1.heat.16.value}}, {{weekTrend.2.heat.16.value}}, {{weekTrend.3.heat.16.value}}, {{weekTrend.4.heat.16.value}}],
+        [18,  {{weekTrend.0.heat.17.value}}, {{weekTrend.1.heat.17.value}}, {{weekTrend.2.heat.17.value}}, {{weekTrend.3.heat.17.value}}, {{weekTrend.4.heat.17.value}}],
+        [19,  {{weekTrend.0.heat.18.value}}, {{weekTrend.1.heat.18.value}}, {{weekTrend.2.heat.18.value}}, {{weekTrend.3.heat.18.value}}, {{weekTrend.4.heat.18.value}}],
+        [20,  {{weekTrend.0.heat.19.value}}, {{weekTrend.1.heat.19.value}}, {{weekTrend.2.heat.19.value}}, {{weekTrend.3.heat.19.value}}, {{weekTrend.4.heat.19.value}}],
+        [21,  {{weekTrend.0.heat.20.value}}, {{weekTrend.1.heat.20.value}}, {{weekTrend.2.heat.20.value}}, {{weekTrend.3.heat.20.value}}, {{weekTrend.4.heat.20.value}}],
+        [22,  {{weekTrend.0.heat.21.value}}, {{weekTrend.1.heat.21.value}}, {{weekTrend.2.heat.21.value}}, {{weekTrend.3.heat.21.value}}, {{weekTrend.4.heat.21.value}}],
+        [23,  {{weekTrend.0.heat.22.value}}, {{weekTrend.1.heat.22.value}}, {{weekTrend.2.heat.22.value}}, {{weekTrend.3.heat.22.value}}, {{weekTrend.4.heat.22.value}}],
+        [24,  {{weekTrend.0.heat.23.value}}, {{weekTrend.1.heat.23.value}}, {{weekTrend.2.heat.23.value}}, {{weekTrend.3.heat.23.value}}, {{weekTrend.4.heat.23.value}}],
+        [25,  {{weekTrend.0.heat.24.value}}, {{weekTrend.1.heat.24.value}}, {{weekTrend.2.heat.24.value}}, {{weekTrend.3.heat.24.value}}, {{weekTrend.4.heat.24.value}}],
+        [26,  {{weekTrend.0.heat.25.value}}, {{weekTrend.1.heat.25.value}}, {{weekTrend.2.heat.25.value}}, {{weekTrend.3.heat.25.value}}, {{weekTrend.4.heat.25.value}}],
+        [27,  {{weekTrend.0.heat.26.value}}, {{weekTrend.1.heat.26.value}}, {{weekTrend.2.heat.26.value}}, {{weekTrend.3.heat.26.value}}, {{weekTrend.4.heat.26.value}}],
+        [28,  {{weekTrend.0.heat.27.value}}, {{weekTrend.1.heat.27.value}}, {{weekTrend.2.heat.27.value}}, {{weekTrend.3.heat.27.value}}, {{weekTrend.4.heat.27.value}}],
+        [29,  {{weekTrend.0.heat.28.value}}, {{weekTrend.1.heat.28.value}}, {{weekTrend.2.heat.28.value}}, {{weekTrend.3.heat.28.value}}, {{weekTrend.4.heat.28.value}}],
+        [30,  {{weekTrend.0.heat.29.value}}, {{weekTrend.1.heat.29.value}}, {{weekTrend.2.heat.29.value}}, {{weekTrend.3.heat.29.value}}, {{weekTrend.4.heat.29.value}}],
+        [31,  {{weekTrend.0.heat.30.value}}, {{weekTrend.1.heat.30.value}}, {{weekTrend.2.heat.30.value}}, {{weekTrend.3.heat.30.value}}, {{weekTrend.4.heat.30.value}}],
+        [32,  {{weekTrend.0.heat.31.value}}, {{weekTrend.1.heat.31.value}}, {{weekTrend.2.heat.31.value}}, {{weekTrend.3.heat.31.value}}, {{weekTrend.4.heat.31.value}}],
+        [33,  {{weekTrend.0.heat.32.value}}, {{weekTrend.1.heat.32.value}}, {{weekTrend.2.heat.32.value}}, {{weekTrend.3.heat.32.value}}, {{weekTrend.4.heat.32.value}}],
+        [34,  {{weekTrend.0.heat.33.value}}, {{weekTrend.1.heat.33.value}}, {{weekTrend.2.heat.33.value}}, {{weekTrend.3.heat.33.value}}, {{weekTrend.4.heat.33.value}}],
+        [35,  {{weekTrend.0.heat.34.value}}, {{weekTrend.1.heat.34.value}}, {{weekTrend.2.heat.34.value}}, {{weekTrend.3.heat.34.value}}, {{weekTrend.4.heat.34.value}}],
+        [36,  {{weekTrend.0.heat.35.value}}, {{weekTrend.1.heat.35.value}}, {{weekTrend.2.heat.35.value}}, {{weekTrend.3.heat.35.value}}, {{weekTrend.4.heat.35.value}}],
+        [37,  {{weekTrend.0.heat.36.value}}, {{weekTrend.1.heat.36.value}}, {{weekTrend.2.heat.36.value}}, {{weekTrend.3.heat.36.value}}, {{weekTrend.4.heat.36.value}}],
+        [38,  {{weekTrend.0.heat.37.value}}, {{weekTrend.1.heat.37.value}}, {{weekTrend.2.heat.37.value}}, {{weekTrend.3.heat.37.value}}, {{weekTrend.4.heat.37.value}}],
+        [39,  {{weekTrend.0.heat.38.value}}, {{weekTrend.1.heat.38.value}}, {{weekTrend.2.heat.38.value}}, {{weekTrend.3.heat.38.value}}, {{weekTrend.4.heat.38.value}}],
+        [40,  {{weekTrend.0.heat.39.value}}, {{weekTrend.1.heat.39.value}}, {{weekTrend.2.heat.39.value}}, {{weekTrend.3.heat.39.value}}, {{weekTrend.4.heat.39.value}}],
+        [41,  {{weekTrend.0.heat.40.value}}, {{weekTrend.1.heat.40.value}}, {{weekTrend.2.heat.40.value}}, {{weekTrend.3.heat.40.value}}, {{weekTrend.4.heat.40.value}}],
+        [42,  {{weekTrend.0.heat.41.value}}, {{weekTrend.1.heat.41.value}}, {{weekTrend.2.heat.41.value}}, {{weekTrend.3.heat.41.value}}, {{weekTrend.4.heat.41.value}}],
+        [43,  {{weekTrend.0.heat.42.value}}, {{weekTrend.1.heat.42.value}}, {{weekTrend.2.heat.42.value}}, {{weekTrend.3.heat.42.value}}, {{weekTrend.4.heat.42.value}}],
+        [44,  {{weekTrend.0.heat.43.value}}, {{weekTrend.1.heat.43.value}}, {{weekTrend.2.heat.43.value}}, {{weekTrend.3.heat.43.value}}, {{weekTrend.4.heat.43.value}}],
+        [45,  {{weekTrend.0.heat.44.value}}, {{weekTrend.1.heat.44.value}}, {{weekTrend.2.heat.44.value}}, {{weekTrend.3.heat.44.value}}, {{weekTrend.4.heat.44.value}}],
+        [46,  {{weekTrend.0.heat.45.value}}, {{weekTrend.1.heat.45.value}}, {{weekTrend.2.heat.45.value}}, {{weekTrend.3.heat.45.value}}, {{weekTrend.4.heat.45.value}}],
+        [47,  {{weekTrend.0.heat.46.value}}, {{weekTrend.1.heat.46.value}}, {{weekTrend.2.heat.46.value}}, {{weekTrend.3.heat.46.value}}, {{weekTrend.4.heat.46.value}}],
+        [48,  {{weekTrend.0.heat.47.value}}, {{weekTrend.1.heat.47.value}}, {{weekTrend.2.heat.47.value}}, {{weekTrend.3.heat.47.value}}, {{weekTrend.4.heat.47.value}}],
+        [49,  {{weekTrend.0.heat.48.value}}, {{weekTrend.1.heat.48.value}}, {{weekTrend.2.heat.48.value}}, {{weekTrend.3.heat.48.value}}, {{weekTrend.4.heat.48.value}}],
+        [50,  {{weekTrend.0.heat.49.value}}, {{weekTrend.1.heat.49.value}}, {{weekTrend.2.heat.49.value}}, {{weekTrend.3.heat.49.value}}, {{weekTrend.4.heat.49.value}}],
+        [51,  {{weekTrend.0.heat.50.value}}, {{weekTrend.1.heat.50.value}}, {{weekTrend.2.heat.50.value}}, {{weekTrend.3.heat.50.value}}, {{weekTrend.4.heat.50.value}}],
+        [52,  {{weekTrend.0.heat.51.value}}, {{weekTrend.1.heat.51.value}}, {{weekTrend.2.heat.51.value}}, {{weekTrend.3.heat.51.value}}, {{weekTrend.4.heat.51.value}}]
+      ]);
+
+      var options = {
+        chart: {
+          title: 'The trend predictions of food features based on google trend history',
+          subtitle: 'By heat Rate'
+        },
+        width: 1100,
+        height: 500,
+        axes: {
+          x: {
+            0: {side: 'top'}
+          }
+        }
+      };
+
+      var chart = new google.charts.Line(document.getElementById('Weekly'));
+
+      chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+  </script>
+
+
+
+
+
+
+
+<script type="text/javascript">
+      google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Week');
+      data.addColumn('number', '{{monthTrend.0.id}}');
+      data.addColumn('number', '{{monthTrend.1.id}}');
+      data.addColumn('number', '{{monthTrend.2.id}}');
+      data.addColumn('number', '{{monthTrend.3.id}}');
+      data.addColumn('number', '{{monthTrend.4.id}}');
+
+      data.addRows([
+        [1,  {{monthTrend.0.heat.0.value}}, {{monthTrend.1.heat.0.value}}, {{monthTrend.2.heat.0.value}}, {{monthTrend.3.heat.0.value}}, {{monthTrend.4.heat.0.value}}],
+        [2,  {{monthTrend.0.heat.1.value}}, {{monthTrend.1.heat.1.value}}, {{monthTrend.2.heat.1.value}}, {{monthTrend.3.heat.1.value}}, {{monthTrend.4.heat.1.value}}],
+        [3,  {{monthTrend.0.heat.2.value}}, {{monthTrend.1.heat.2.value}}, {{monthTrend.2.heat.2.value}}, {{monthTrend.3.heat.2.value}}, {{monthTrend.4.heat.2.value}}],
+        [4,  {{monthTrend.0.heat.3.value}}, {{monthTrend.1.heat.3.value}}, {{monthTrend.2.heat.3.value}}, {{monthTrend.3.heat.3.value}}, {{monthTrend.4.heat.3.value}}],
+        [5,  {{monthTrend.0.heat.4.value}}, {{monthTrend.1.heat.4.value}}, {{monthTrend.2.heat.4.value}}, {{monthTrend.3.heat.4.value}}, {{monthTrend.4.heat.4.value}}],
+        [6,  {{monthTrend.0.heat.5.value}}, {{monthTrend.1.heat.5.value}}, {{monthTrend.2.heat.5.value}}, {{monthTrend.3.heat.5.value}}, {{monthTrend.4.heat.5.value}}],
+        [7,  {{monthTrend.0.heat.6.value}}, {{monthTrend.1.heat.6.value}}, {{monthTrend.2.heat.6.value}}, {{monthTrend.3.heat.6.value}}, {{monthTrend.4.heat.6.value}}],
+        [8,  {{monthTrend.0.heat.7.value}}, {{monthTrend.1.heat.7.value}}, {{monthTrend.2.heat.7.value}}, {{monthTrend.3.heat.7.value}}, {{monthTrend.4.heat.7.value}}],
+        [9,  {{monthTrend.0.heat.8.value}}, {{monthTrend.1.heat.8.value}}, {{monthTrend.2.heat.8.value}}, {{monthTrend.3.heat.8.value}}, {{monthTrend.4.heat.8.value}}],
+        [10, {{monthTrend.0.heat.9.value}}, {{monthTrend.1.heat.9.value}}, {{monthTrend.2.heat.9.value}}, {{monthTrend.3.heat.9.value}}, {{monthTrend.4.heat.9.value}}],
+        [11,  {{monthTrend.0.heat.10.value}}, {{monthTrend.1.heat.10.value}}, {{monthTrend.2.heat.10.value}}, {{monthTrend.3.heat.10.value}}, {{monthTrend.4.heat.10.value}}],
+        [12,  {{monthTrend.0.heat.11.value}}, {{monthTrend.1.heat.11.value}}, {{monthTrend.2.heat.11.value}}, {{monthTrend.3.heat.11.value}}, {{monthTrend.4.heat.11.value}}],
+        [13,  {{monthTrend.0.heat.12.value}}, {{monthTrend.1.heat.12.value}}, {{monthTrend.2.heat.12.value}}, {{monthTrend.3.heat.12.value}}, {{monthTrend.4.heat.12.value}}],
+        [14,  {{monthTrend.0.heat.13.value}}, {{monthTrend.1.heat.13.value}}, {{monthTrend.2.heat.13.value}}, {{monthTrend.3.heat.13.value}}, {{monthTrend.4.heat.13.value}}],
+        [15,  {{monthTrend.0.heat.14.value}}, {{monthTrend.1.heat.14.value}}, {{monthTrend.2.heat.14.value}}, {{monthTrend.3.heat.14.value}}, {{monthTrend.4.heat.14.value}}],
+        [16,  {{monthTrend.0.heat.15.value}}, {{monthTrend.1.heat.15.value}}, {{monthTrend.2.heat.15.value}}, {{monthTrend.3.heat.15.value}}, {{monthTrend.4.heat.15.value}}],
+        [17,  {{monthTrend.0.heat.16.value}}, {{monthTrend.1.heat.16.value}}, {{monthTrend.2.heat.16.value}}, {{monthTrend.3.heat.16.value}}, {{monthTrend.4.heat.16.value}}],
+        [18,  {{monthTrend.0.heat.17.value}}, {{monthTrend.1.heat.17.value}}, {{monthTrend.2.heat.17.value}}, {{monthTrend.3.heat.17.value}}, {{monthTrend.4.heat.17.value}}],
+        [19,  {{monthTrend.0.heat.18.value}}, {{monthTrend.1.heat.18.value}}, {{monthTrend.2.heat.18.value}}, {{monthTrend.3.heat.18.value}}, {{monthTrend.4.heat.18.value}}],
+        [20,  {{monthTrend.0.heat.19.value}}, {{monthTrend.1.heat.19.value}}, {{monthTrend.2.heat.19.value}}, {{monthTrend.3.heat.19.value}}, {{monthTrend.4.heat.19.value}}],
+        [21,  {{monthTrend.0.heat.20.value}}, {{monthTrend.1.heat.20.value}}, {{monthTrend.2.heat.20.value}}, {{monthTrend.3.heat.20.value}}, {{monthTrend.4.heat.20.value}}],
+        [22,  {{monthTrend.0.heat.21.value}}, {{monthTrend.1.heat.21.value}}, {{monthTrend.2.heat.21.value}}, {{monthTrend.3.heat.21.value}}, {{monthTrend.4.heat.21.value}}],
+        [23,  {{monthTrend.0.heat.22.value}}, {{monthTrend.1.heat.22.value}}, {{monthTrend.2.heat.22.value}}, {{monthTrend.3.heat.22.value}}, {{monthTrend.4.heat.22.value}}],
+        [24,  {{monthTrend.0.heat.23.value}}, {{monthTrend.1.heat.23.value}}, {{monthTrend.2.heat.23.value}}, {{monthTrend.3.heat.23.value}}, {{monthTrend.4.heat.23.value}}],
+        [25,  {{monthTrend.0.heat.24.value}}, {{monthTrend.1.heat.24.value}}, {{monthTrend.2.heat.24.value}}, {{monthTrend.3.heat.24.value}}, {{monthTrend.4.heat.24.value}}],
+        [26,  {{monthTrend.0.heat.25.value}}, {{monthTrend.1.heat.25.value}}, {{monthTrend.2.heat.25.value}}, {{monthTrend.3.heat.25.value}}, {{monthTrend.4.heat.25.value}}],
+        [27,  {{monthTrend.0.heat.26.value}}, {{monthTrend.1.heat.26.value}}, {{monthTrend.2.heat.26.value}}, {{monthTrend.3.heat.26.value}}, {{monthTrend.4.heat.26.value}}],
+        [28,  {{monthTrend.0.heat.27.value}}, {{monthTrend.1.heat.27.value}}, {{monthTrend.2.heat.27.value}}, {{monthTrend.3.heat.27.value}}, {{monthTrend.4.heat.27.value}}],
+        [29,  {{monthTrend.0.heat.28.value}}, {{monthTrend.1.heat.28.value}}, {{monthTrend.2.heat.28.value}}, {{monthTrend.3.heat.28.value}}, {{monthTrend.4.heat.28.value}}],
+        [30,  {{monthTrend.0.heat.29.value}}, {{monthTrend.1.heat.29.value}}, {{monthTrend.2.heat.29.value}}, {{monthTrend.3.heat.29.value}}, {{monthTrend.4.heat.29.value}}],
+        [31,  {{monthTrend.0.heat.30.value}}, {{monthTrend.1.heat.30.value}}, {{monthTrend.2.heat.30.value}}, {{monthTrend.3.heat.30.value}}, {{monthTrend.4.heat.30.value}}],
+        [32,  {{monthTrend.0.heat.31.value}}, {{monthTrend.1.heat.31.value}}, {{monthTrend.2.heat.31.value}}, {{monthTrend.3.heat.31.value}}, {{monthTrend.4.heat.31.value}}],
+        [33,  {{monthTrend.0.heat.32.value}}, {{monthTrend.1.heat.32.value}}, {{monthTrend.2.heat.32.value}}, {{monthTrend.3.heat.32.value}}, {{monthTrend.4.heat.32.value}}],
+        [34,  {{monthTrend.0.heat.33.value}}, {{monthTrend.1.heat.33.value}}, {{monthTrend.2.heat.33.value}}, {{monthTrend.3.heat.33.value}}, {{monthTrend.4.heat.33.value}}],
+        [35,  {{monthTrend.0.heat.34.value}}, {{monthTrend.1.heat.34.value}}, {{monthTrend.2.heat.34.value}}, {{monthTrend.3.heat.34.value}}, {{monthTrend.4.heat.34.value}}],
+        [36,  {{monthTrend.0.heat.35.value}}, {{monthTrend.1.heat.35.value}}, {{monthTrend.2.heat.35.value}}, {{monthTrend.3.heat.35.value}}, {{monthTrend.4.heat.35.value}}],
+        [37,  {{monthTrend.0.heat.36.value}}, {{monthTrend.1.heat.36.value}}, {{monthTrend.2.heat.36.value}}, {{monthTrend.3.heat.36.value}}, {{monthTrend.4.heat.36.value}}],
+        [38,  {{monthTrend.0.heat.37.value}}, {{monthTrend.1.heat.37.value}}, {{monthTrend.2.heat.37.value}}, {{monthTrend.3.heat.37.value}}, {{monthTrend.4.heat.37.value}}],
+        [39,  {{monthTrend.0.heat.38.value}}, {{monthTrend.1.heat.38.value}}, {{monthTrend.2.heat.38.value}}, {{monthTrend.3.heat.38.value}}, {{monthTrend.4.heat.38.value}}],
+        [40,  {{monthTrend.0.heat.39.value}}, {{monthTrend.1.heat.39.value}}, {{monthTrend.2.heat.39.value}}, {{monthTrend.3.heat.39.value}}, {{monthTrend.4.heat.39.value}}],
+        [41,  {{monthTrend.0.heat.40.value}}, {{monthTrend.1.heat.40.value}}, {{monthTrend.2.heat.40.value}}, {{monthTrend.3.heat.40.value}}, {{monthTrend.4.heat.40.value}}],
+        [42,  {{monthTrend.0.heat.41.value}}, {{monthTrend.1.heat.41.value}}, {{monthTrend.2.heat.41.value}}, {{monthTrend.3.heat.41.value}}, {{monthTrend.4.heat.41.value}}],
+        [43,  {{monthTrend.0.heat.42.value}}, {{monthTrend.1.heat.42.value}}, {{monthTrend.2.heat.42.value}}, {{monthTrend.3.heat.42.value}}, {{monthTrend.4.heat.42.value}}],
+        [44,  {{monthTrend.0.heat.43.value}}, {{monthTrend.1.heat.43.value}}, {{monthTrend.2.heat.43.value}}, {{monthTrend.3.heat.43.value}}, {{monthTrend.4.heat.43.value}}],
+        [45,  {{monthTrend.0.heat.44.value}}, {{monthTrend.1.heat.44.value}}, {{monthTrend.2.heat.44.value}}, {{monthTrend.3.heat.44.value}}, {{monthTrend.4.heat.44.value}}],
+        [46,  {{monthTrend.0.heat.45.value}}, {{monthTrend.1.heat.45.value}}, {{monthTrend.2.heat.45.value}}, {{monthTrend.3.heat.45.value}}, {{monthTrend.4.heat.45.value}}],
+        [47,  {{monthTrend.0.heat.46.value}}, {{monthTrend.1.heat.46.value}}, {{monthTrend.2.heat.46.value}}, {{monthTrend.3.heat.46.value}}, {{monthTrend.4.heat.46.value}}],
+        [48,  {{monthTrend.0.heat.47.value}}, {{monthTrend.1.heat.47.value}}, {{monthTrend.2.heat.47.value}}, {{monthTrend.3.heat.47.value}}, {{monthTrend.4.heat.47.value}}],
+        [49,  {{monthTrend.0.heat.48.value}}, {{monthTrend.1.heat.48.value}}, {{monthTrend.2.heat.48.value}}, {{monthTrend.3.heat.48.value}}, {{monthTrend.4.heat.48.value}}],
+        [50,  {{monthTrend.0.heat.49.value}}, {{monthTrend.1.heat.49.value}}, {{monthTrend.2.heat.49.value}}, {{monthTrend.3.heat.49.value}}, {{monthTrend.4.heat.49.value}}],
+        [51,  {{monthTrend.0.heat.50.value}}, {{monthTrend.1.heat.50.value}}, {{monthTrend.2.heat.50.value}}, {{monthTrend.3.heat.50.value}}, {{monthTrend.4.heat.50.value}}],
+        [52,  {{monthTrend.0.heat.51.value}}, {{monthTrend.1.heat.51.value}}, {{monthTrend.2.heat.51.value}}, {{monthTrend.3.heat.51.value}}, {{monthTrend.4.heat.51.value}}]
+      ]);
+
+      var options = {
+        chart: {
+          title: 'The trend predictions of food features based on google trend history',
+          subtitle: 'By heat Rate'
+        },
+        width: 1100,
+        height: 500,
+        axes: {
+          x: {
+            0: {side: 'top'}
+          }
+        }
+      };
+
+      var chart = new google.charts.Line(document.getElementById('Monthly'));
+
+      chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+      google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Week');
+      data.addColumn('number', '{{hiddenGem.0.id}}');
+      data.addColumn('number', '{{hiddenGem.1.id}}');
+      data.addColumn('number', '{{hiddenGem.2.id}}');
+      data.addColumn('number', '{{hiddenGem.3.id}}');
+      data.addColumn('number', '{{hiddenGem.4.id}}');
+
+      data.addRows([
+        [1,  {{hiddenGem.0.heat.0.value}}, {{hiddenGem.1.heat.0.value}}, {{hiddenGem.2.heat.0.value}}, {{hiddenGem.3.heat.0.value}}, {{hiddenGem.4.heat.0.value}}],
+        [2,  {{hiddenGem.0.heat.1.value}}, {{hiddenGem.1.heat.1.value}}, {{hiddenGem.2.heat.1.value}}, {{hiddenGem.3.heat.1.value}}, {{hiddenGem.4.heat.1.value}}],
+        [3,  {{hiddenGem.0.heat.2.value}}, {{hiddenGem.1.heat.2.value}}, {{hiddenGem.2.heat.2.value}}, {{hiddenGem.3.heat.2.value}}, {{hiddenGem.4.heat.2.value}}],
+        [4,  {{hiddenGem.0.heat.3.value}}, {{hiddenGem.1.heat.3.value}}, {{hiddenGem.2.heat.3.value}}, {{hiddenGem.3.heat.3.value}}, {{hiddenGem.4.heat.3.value}}],
+        [5,  {{hiddenGem.0.heat.4.value}}, {{hiddenGem.1.heat.4.value}}, {{hiddenGem.2.heat.4.value}}, {{hiddenGem.3.heat.4.value}}, {{hiddenGem.4.heat.4.value}}],
+        [6,  {{hiddenGem.0.heat.5.value}}, {{hiddenGem.1.heat.5.value}}, {{hiddenGem.2.heat.5.value}}, {{hiddenGem.3.heat.5.value}}, {{hiddenGem.4.heat.5.value}}],
+        [7,  {{hiddenGem.0.heat.6.value}}, {{hiddenGem.1.heat.6.value}}, {{hiddenGem.2.heat.6.value}}, {{hiddenGem.3.heat.6.value}}, {{hiddenGem.4.heat.6.value}}],
+        [8,  {{hiddenGem.0.heat.7.value}}, {{hiddenGem.1.heat.7.value}}, {{hiddenGem.2.heat.7.value}}, {{hiddenGem.3.heat.7.value}}, {{hiddenGem.4.heat.7.value}}],
+        [9,  {{hiddenGem.0.heat.8.value}}, {{hiddenGem.1.heat.8.value}}, {{hiddenGem.2.heat.8.value}}, {{hiddenGem.3.heat.8.value}}, {{hiddenGem.4.heat.8.value}}],
+        [10, {{hiddenGem.0.heat.9.value}}, {{hiddenGem.1.heat.9.value}}, {{hiddenGem.2.heat.9.value}}, {{hiddenGem.3.heat.9.value}}, {{hiddenGem.4.heat.9.value}}],
+        [11,  {{hiddenGem.0.heat.10.value}}, {{hiddenGem.1.heat.10.value}}, {{hiddenGem.2.heat.10.value}}, {{hiddenGem.3.heat.10.value}}, {{hiddenGem.4.heat.10.value}}],
+        [12,  {{hiddenGem.0.heat.11.value}}, {{hiddenGem.1.heat.11.value}}, {{hiddenGem.2.heat.11.value}}, {{hiddenGem.3.heat.11.value}}, {{hiddenGem.4.heat.11.value}}],
+        [13,  {{hiddenGem.0.heat.12.value}}, {{hiddenGem.1.heat.12.value}}, {{hiddenGem.2.heat.12.value}}, {{hiddenGem.3.heat.12.value}}, {{hiddenGem.4.heat.12.value}}],
+        [14,  {{hiddenGem.0.heat.13.value}}, {{hiddenGem.1.heat.13.value}}, {{hiddenGem.2.heat.13.value}}, {{hiddenGem.3.heat.13.value}}, {{hiddenGem.4.heat.13.value}}],
+        [15,  {{hiddenGem.0.heat.14.value}}, {{hiddenGem.1.heat.14.value}}, {{hiddenGem.2.heat.14.value}}, {{hiddenGem.3.heat.14.value}}, {{hiddenGem.4.heat.14.value}}],
+        [16,  {{hiddenGem.0.heat.15.value}}, {{hiddenGem.1.heat.15.value}}, {{hiddenGem.2.heat.15.value}}, {{hiddenGem.3.heat.15.value}}, {{hiddenGem.4.heat.15.value}}],
+        [17,  {{hiddenGem.0.heat.16.value}}, {{hiddenGem.1.heat.16.value}}, {{hiddenGem.2.heat.16.value}}, {{hiddenGem.3.heat.16.value}}, {{hiddenGem.4.heat.16.value}}],
+        [18,  {{hiddenGem.0.heat.17.value}}, {{hiddenGem.1.heat.17.value}}, {{hiddenGem.2.heat.17.value}}, {{hiddenGem.3.heat.17.value}}, {{hiddenGem.4.heat.17.value}}],
+        [19,  {{hiddenGem.0.heat.18.value}}, {{hiddenGem.1.heat.18.value}}, {{hiddenGem.2.heat.18.value}}, {{hiddenGem.3.heat.18.value}}, {{hiddenGem.4.heat.18.value}}],
+        [20,  {{hiddenGem.0.heat.19.value}}, {{hiddenGem.1.heat.19.value}}, {{hiddenGem.2.heat.19.value}}, {{hiddenGem.3.heat.19.value}}, {{hiddenGem.4.heat.19.value}}],
+        [21,  {{hiddenGem.0.heat.20.value}}, {{hiddenGem.1.heat.20.value}}, {{hiddenGem.2.heat.20.value}}, {{hiddenGem.3.heat.20.value}}, {{hiddenGem.4.heat.20.value}}],
+        [22,  {{hiddenGem.0.heat.21.value}}, {{hiddenGem.1.heat.21.value}}, {{hiddenGem.2.heat.21.value}}, {{hiddenGem.3.heat.21.value}}, {{hiddenGem.4.heat.21.value}}],
+        [23,  {{hiddenGem.0.heat.22.value}}, {{hiddenGem.1.heat.22.value}}, {{hiddenGem.2.heat.22.value}}, {{hiddenGem.3.heat.22.value}}, {{hiddenGem.4.heat.22.value}}],
+        [24,  {{hiddenGem.0.heat.23.value}}, {{hiddenGem.1.heat.23.value}}, {{hiddenGem.2.heat.23.value}}, {{hiddenGem.3.heat.23.value}}, {{hiddenGem.4.heat.23.value}}],
+        [25,  {{hiddenGem.0.heat.24.value}}, {{hiddenGem.1.heat.24.value}}, {{hiddenGem.2.heat.24.value}}, {{hiddenGem.3.heat.24.value}}, {{hiddenGem.4.heat.24.value}}],
+        [26,  {{hiddenGem.0.heat.25.value}}, {{hiddenGem.1.heat.25.value}}, {{hiddenGem.2.heat.25.value}}, {{hiddenGem.3.heat.25.value}}, {{hiddenGem.4.heat.25.value}}],
+        [27,  {{hiddenGem.0.heat.26.value}}, {{hiddenGem.1.heat.26.value}}, {{hiddenGem.2.heat.26.value}}, {{hiddenGem.3.heat.26.value}}, {{hiddenGem.4.heat.26.value}}],
+        [28,  {{hiddenGem.0.heat.27.value}}, {{hiddenGem.1.heat.27.value}}, {{hiddenGem.2.heat.27.value}}, {{hiddenGem.3.heat.27.value}}, {{hiddenGem.4.heat.27.value}}],
+        [29,  {{hiddenGem.0.heat.28.value}}, {{hiddenGem.1.heat.28.value}}, {{hiddenGem.2.heat.28.value}}, {{hiddenGem.3.heat.28.value}}, {{hiddenGem.4.heat.28.value}}],
+        [30,  {{hiddenGem.0.heat.29.value}}, {{hiddenGem.1.heat.29.value}}, {{hiddenGem.2.heat.29.value}}, {{hiddenGem.3.heat.29.value}}, {{hiddenGem.4.heat.29.value}}],
+        [31,  {{hiddenGem.0.heat.30.value}}, {{hiddenGem.1.heat.30.value}}, {{hiddenGem.2.heat.30.value}}, {{hiddenGem.3.heat.30.value}}, {{hiddenGem.4.heat.30.value}}],
+        [32,  {{hiddenGem.0.heat.31.value}}, {{hiddenGem.1.heat.31.value}}, {{hiddenGem.2.heat.31.value}}, {{hiddenGem.3.heat.31.value}}, {{hiddenGem.4.heat.31.value}}],
+        [33,  {{hiddenGem.0.heat.32.value}}, {{hiddenGem.1.heat.32.value}}, {{hiddenGem.2.heat.32.value}}, {{hiddenGem.3.heat.32.value}}, {{hiddenGem.4.heat.32.value}}],
+        [34,  {{hiddenGem.0.heat.33.value}}, {{hiddenGem.1.heat.33.value}}, {{hiddenGem.2.heat.33.value}}, {{hiddenGem.3.heat.33.value}}, {{hiddenGem.4.heat.33.value}}],
+        [35,  {{hiddenGem.0.heat.34.value}}, {{hiddenGem.1.heat.34.value}}, {{hiddenGem.2.heat.34.value}}, {{hiddenGem.3.heat.34.value}}, {{hiddenGem.4.heat.34.value}}],
+        [36,  {{hiddenGem.0.heat.35.value}}, {{hiddenGem.1.heat.35.value}}, {{hiddenGem.2.heat.35.value}}, {{hiddenGem.3.heat.35.value}}, {{hiddenGem.4.heat.35.value}}],
+        [37,  {{hiddenGem.0.heat.36.value}}, {{hiddenGem.1.heat.36.value}}, {{hiddenGem.2.heat.36.value}}, {{hiddenGem.3.heat.36.value}}, {{hiddenGem.4.heat.36.value}}],
+        [38,  {{hiddenGem.0.heat.37.value}}, {{hiddenGem.1.heat.37.value}}, {{hiddenGem.2.heat.37.value}}, {{hiddenGem.3.heat.37.value}}, {{hiddenGem.4.heat.37.value}}],
+        [39,  {{hiddenGem.0.heat.38.value}}, {{hiddenGem.1.heat.38.value}}, {{hiddenGem.2.heat.38.value}}, {{hiddenGem.3.heat.38.value}}, {{hiddenGem.4.heat.38.value}}],
+        [40,  {{hiddenGem.0.heat.39.value}}, {{hiddenGem.1.heat.39.value}}, {{hiddenGem.2.heat.39.value}}, {{hiddenGem.3.heat.39.value}}, {{hiddenGem.4.heat.39.value}}],
+        [41,  {{hiddenGem.0.heat.40.value}}, {{hiddenGem.1.heat.40.value}}, {{hiddenGem.2.heat.40.value}}, {{hiddenGem.3.heat.40.value}}, {{hiddenGem.4.heat.40.value}}],
+        [42,  {{hiddenGem.0.heat.41.value}}, {{hiddenGem.1.heat.41.value}}, {{hiddenGem.2.heat.41.value}}, {{hiddenGem.3.heat.41.value}}, {{hiddenGem.4.heat.41.value}}],
+        [43,  {{hiddenGem.0.heat.42.value}}, {{hiddenGem.1.heat.42.value}}, {{hiddenGem.2.heat.42.value}}, {{hiddenGem.3.heat.42.value}}, {{hiddenGem.4.heat.42.value}}],
+        [44,  {{hiddenGem.0.heat.43.value}}, {{hiddenGem.1.heat.43.value}}, {{hiddenGem.2.heat.43.value}}, {{hiddenGem.3.heat.43.value}}, {{hiddenGem.4.heat.43.value}}],
+        [45,  {{hiddenGem.0.heat.44.value}}, {{hiddenGem.1.heat.44.value}}, {{hiddenGem.2.heat.44.value}}, {{hiddenGem.3.heat.44.value}}, {{hiddenGem.4.heat.44.value}}],
+        [46,  {{hiddenGem.0.heat.45.value}}, {{hiddenGem.1.heat.45.value}}, {{hiddenGem.2.heat.45.value}}, {{hiddenGem.3.heat.45.value}}, {{hiddenGem.4.heat.45.value}}],
+        [47,  {{hiddenGem.0.heat.46.value}}, {{hiddenGem.1.heat.46.value}}, {{hiddenGem.2.heat.46.value}}, {{hiddenGem.3.heat.46.value}}, {{hiddenGem.4.heat.46.value}}],
+        [48,  {{hiddenGem.0.heat.47.value}}, {{hiddenGem.1.heat.47.value}}, {{hiddenGem.2.heat.47.value}}, {{hiddenGem.3.heat.47.value}}, {{hiddenGem.4.heat.47.value}}],
+        [49,  {{hiddenGem.0.heat.48.value}}, {{hiddenGem.1.heat.48.value}}, {{hiddenGem.2.heat.48.value}}, {{hiddenGem.3.heat.48.value}}, {{hiddenGem.4.heat.48.value}}],
+        [50,  {{hiddenGem.0.heat.49.value}}, {{hiddenGem.1.heat.49.value}}, {{hiddenGem.2.heat.49.value}}, {{hiddenGem.3.heat.49.value}}, {{hiddenGem.4.heat.49.value}}],
+        [51,  {{hiddenGem.0.heat.50.value}}, {{hiddenGem.1.heat.50.value}}, {{hiddenGem.2.heat.50.value}}, {{hiddenGem.3.heat.50.value}}, {{hiddenGem.4.heat.50.value}}],
+        [52,  {{hiddenGem.0.heat.51.value}}, {{hiddenGem.1.heat.51.value}}, {{hiddenGem.2.heat.51.value}}, {{hiddenGem.3.heat.51.value}}, {{hiddenGem.4.heat.51.value}}]
+      ]);
+
+      var options = {
+        chart: {
+          title: 'The trend predictions of food features based on google trend history',
+          subtitle: 'By heat Rate'
+        },
+        width: 1100,
+        height: 500,
+        axes: {
+          x: {
+            0: {side: 'top'}
+          }
+        }
+      };
+
+      var chart = new google.charts.Line(document.getElementById('Hidden'));
+
+      chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+  </script>
+{% endblock content %}

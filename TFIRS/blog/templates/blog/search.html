@@ -1,0 +1,42 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<form method="get" action="">
+    <center>
+        <input type="text" name="q" placeholder="Search.." size="100" class="textbox-search" value="{{ request.GET.q }}"><br>
+        <input type="submit" value="Search" class="btn-home">
+    </center>
+</form>
+{% for recipe in recipes %}
+    <article class="media content-section">
+        <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2" href="{% url 'blog-recipe-detail' slug=recipe.recipe_id %}"><h1>{{ recipe.name }}</h1></a>
+                <small class="text-muted">Cuisines: {{ recipe.cuisines }}</small>
+            </div>
+<!--            <p class="article-content">-->
+<!--                {{ recipe.ingredient }}-->
+<!--            </p>-->
+        </div>
+    </article>
+{% endfor %}
+
+
+<!--<div class="pagination">-->
+<!--    <span class="step-links">-->
+<!--        {% if recipes.has_previous %}-->
+<!--            <a href="?page=1">&laquo; first</a>-->
+<!--            <a href="?page={{ recipes.previous_page_number }}">previous</a>-->
+<!--        {% endif %}-->
+
+<!--        <span class="current">-->
+<!--            Page {{ recipes.number }} of {{ recipes.paginator.num_pages }}.-->
+<!--        </span>-->
+
+<!--        {% if recipes.has_next %}-->
+<!--            <a href="?page={{ recipes.next_page_number }}">next</a>-->
+<!--            <a href="?page={{ recipes.paginator.num_pages }}">last &raquo;</a>-->
+<!--        {% endif %}-->
+<!--    </span>-->
+<!--</div>-->
+
+{% endblock content %}
